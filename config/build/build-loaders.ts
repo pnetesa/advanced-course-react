@@ -43,10 +43,25 @@ export function buildLoaders(options: BuildOptions): RuleSetRule[] {
     ],
   };
 
+  // const reactRefreshLoader = {
+  //   test: /\.[jt]sx?$/,
+  //   exclude: /node_modules/,
+  //   use: [
+  //     {
+  //       loader: require.resolve('babel-loader'),
+  //       options: {
+  //         plugins: [options.isDev && require.resolve('react-refresh/babel')].filter(Boolean),
+  //       },
+  //     },
+  //   ],
+  // };
+
+
   return [
     typescriptLoader,
     swgLoader,
     cssLoaders,
     fileLoader,
+    // reactRefreshLoader,
   ];
 }

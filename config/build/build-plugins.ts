@@ -1,7 +1,8 @@
-import { WebpackPluginInstance, ProgressPlugin, DefinePlugin } from 'webpack';
+import { WebpackPluginInstance, ProgressPlugin, DefinePlugin, HotModuleReplacementPlugin } from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { BuildOptions } from './types/config';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+// import ReactRefreshPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 
 export function buildPlugins(options: BuildOptions): WebpackPluginInstance[] {
   return [
@@ -16,5 +17,9 @@ export function buildPlugins(options: BuildOptions): WebpackPluginInstance[] {
     new DefinePlugin({
       __IS_DEV: JSON.stringify(options.isDev),
     }),
+    new HotModuleReplacementPlugin(),
+    // options.isDev
+    //   ? new ReactRefreshPlugin()
+    //   : new HotModuleReplacementPlugin(),
   ];
 }
