@@ -7,6 +7,7 @@ module.exports = {
     'standard-with-typescript',
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',
+    'plugin:i18next/recommended'
   ],
   overrides: [
     {
@@ -26,7 +27,9 @@ module.exports = {
     sourceType: 'module'
   },
   plugins: [
-    'react'
+    'react',
+    '@typescript-eslint',
+    'i18next',
   ],
   rules: {
     // 'react/jsx-indent': ['error', 4],
@@ -42,6 +45,7 @@ module.exports = {
     '@typescript-eslint/space-before-function-paren': 'off',
     '@typescript-eslint/strict-boolean-expressions': 'off',
     '@typescript-eslint/no-floating-promises': 'off',
+    'i18next/no-literal-string': ['error', { markupOnly: true }],
   },
   settings: {
     react: {
