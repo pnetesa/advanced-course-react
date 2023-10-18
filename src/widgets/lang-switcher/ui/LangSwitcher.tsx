@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { type FC } from 'react';
 import { classNames } from 'shared/lib/class-names';
 import cls from './LangSwitcher.module.scss';
 import { useTranslation } from 'react-i18next';
@@ -11,7 +11,7 @@ interface LangSwitcherProps {
 export const LangSwitcher: FC<LangSwitcherProps> = ({ className }) => {
   const { t, i18n } = useTranslation();
 
-  function toggleLanguage() {
+  function toggleLanguage(): void {
     i18n.changeLanguage(i18n.language === 'ua' ? 'en' : 'ua');
   }
 
@@ -19,7 +19,7 @@ export const LangSwitcher: FC<LangSwitcherProps> = ({ className }) => {
     <Button
       type="button"
       className={classNames(cls.langSwitcher, [className])}
-      theme={ThemeButton.CLEAR}
+      theme={ThemeButton.MINIMAL}
       onClick={toggleLanguage}
     >
       { t('Language: ') + i18n.language.toUpperCase()}

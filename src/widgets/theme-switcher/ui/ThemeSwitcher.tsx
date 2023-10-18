@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { type FC } from 'react';
 import { classNames } from 'shared/lib/class-names';
 import cls from './ThemeSwitcher.module.scss';
 import { Theme, useTheme } from 'app/providers/theme-provider';
@@ -24,4 +24,3 @@ export const ThemeSwitcher: FC<ThemeSwitcherProps> = ({ className }) => {
     </Button>
   );
 };
-

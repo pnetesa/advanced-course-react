@@ -6,15 +6,15 @@ import { Navbar } from 'widgets/navbar';
 import { Sidebar } from 'widgets/sidebar';
 import { Suspense } from 'react';
 
-const App = () => {
+const App = (): JSX.Element => {
   const { theme } = useTheme();
 
   return (
     <div className={classNames('app', [theme])}>
       <Suspense fallback="">
-        <Navbar />
+        <Navbar/>
         <div className="content-page">
-          <Sidebar />
+          <Sidebar/>
           <AppRouter/>
         </div>
       </Suspense>

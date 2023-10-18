@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { type FC } from 'react';
 import { classNames } from 'shared/lib/class-names';
 import cls from './Navbar.module.scss';
 import { AppLink, AppLinkTheme } from 'shared/ui/app-link/AppLink';
@@ -17,4 +17,3 @@ export const Navbar: FC<NavbarProps> = ({ className }) => {
     </div>
   );
 };
-
