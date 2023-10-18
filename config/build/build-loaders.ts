@@ -43,25 +43,32 @@ export function buildLoaders(options: BuildOptions): RuleSetRule[] {
     ],
   };
 
-  // const reactRefreshLoader = {
-  //   test: /\.[jt]sx?$/,
-  //   exclude: /node_modules/,
-  //   use: [
-  //     {
-  //       loader: require.resolve('babel-loader'),
-  //       options: {
-  //         plugins: [options.isDev && require.resolve('react-refresh/babel')].filter(Boolean),
-  //       },
-  //     },
-  //   ],
-  // };
+  const babelLoader = {
+    test: /\.(js|jsx|tsx)$/,
+    exclude: /node_modules/,
+    use: {
+      loader: 'babel-loader',
+      options: {
+        presets: ['@babel/preset-env'],
+        plugins: [
+          [
+            'i18next-extract',
+            {
+              locales: ['en', 'ua'],
+              keyAsDefaultValue: true,
+            },
+          ],
+        ],
+      },
+    },
+  };
 
-
+  // ORDER MATTERS!
   return [
-    typescriptLoader,
+    babelLoader,
     swgLoader,
     cssLoaders,
     fileLoader,
-    // reactRefreshLoader,
+    typescriptLoader,
   ];
 }
