@@ -15,4 +15,4 @@ export const ThemeContext = createContext<ThemeContextProps>({
   setTheme: () => {},
 });
 
-export const LOCAL_STORAGE_THEME_KEY = 'LOCAL_STORAGE_THEME_KEY';
+export const LS_THEME_KEY = 'LS_THEME_KEY';

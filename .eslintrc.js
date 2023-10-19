@@ -51,6 +51,7 @@ module.exports = {
     '@typescript-eslint/no-floating-promises': 'off',
     'i18next/no-literal-string': ['error', { markupOnly: true }],
     'max-len': ['error', { code: 120 }],
+    'no-console': 'warn',
   },
   settings: {
     react: {
