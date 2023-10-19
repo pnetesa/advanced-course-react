@@ -1,30 +1,34 @@
 module.exports = {
   env: {
-    'browser': true,
-    'es2021': true
+    browser: true,
+    es2021: true,
   },
   extends: [
     'standard-with-typescript',
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',
-    'plugin:i18next/recommended'
+    'plugin:i18next/recommended',
   ],
   overrides: [
     {
+      extends: ['plugin:@typescript-eslint/disable-type-checked'],
+      files: ['./**/*.js'],
+    },
+    {
       env: {
-        'node': true
+        node: true,
       },
       files: [
-        '.eslintrc.{js,cjs}'
+        '.eslintrc.{js,cjs}',
       ],
       parserOptions: {
-        sourceType: 'script'
-      }
-    }
+        sourceType: 'script',
+      },
+    },
   ],
   parserOptions: {
     ecmaVersion: 'latest',
-    sourceType: 'module'
+    sourceType: 'module',
   },
   plugins: [
     'react',
@@ -34,12 +38,12 @@ module.exports = {
   rules: {
     // 'react/jsx-indent': ['error', 4],
     '@typescript-eslint/semi': 'off',
-    'semi': ['error', 'always'],
+    semi: ['error', 'always'],
     '@typescript-eslint/member-delimiter-style': ['error', {
-      'singleline': {
-        'delimiter': 'semi',
-        'requireLast': true
-      }
+      singleline: {
+        delimiter: 'semi',
+        requireLast: true,
+      },
     }],
     '@typescript-eslint/comma-dangle': ['error', 'always-multiline'],
     '@typescript-eslint/space-before-function-paren': 'off',
@@ -49,7 +53,7 @@ module.exports = {
   },
   settings: {
     react: {
-      version: "detect",
-    }
-  }
+      version: 'detect',
+    },
+  },
 };

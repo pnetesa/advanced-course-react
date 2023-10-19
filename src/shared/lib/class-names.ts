@@ -1,4 +1,4 @@
-type Mods = Record<string, boolean | string>;
+type Mods = Record<string, boolean | string | undefined>;
 
 export function classNames(mainClass: string, additional: Array<string | undefined> = [], mods: Mods = {}): string {
   return [
@@ -9,7 +9,3 @@ export function classNames(mainClass: string, additional: Array<string | undefin
       .map(([className]) => className),
   ].join(' ');
 }
-
-// Usage (exclude 'red')
-// classNames('removed-btn', { hovered: true, selectable: true, red: false }, ['with-paddings', 'pdg'])
-// -> 'removed-btn hovered selectable with-paddings pdg
