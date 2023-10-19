@@ -3,6 +3,7 @@ import { MainPage } from 'pages/main-page';
 import { AboutPage } from 'pages/about-page';
 import { NotFoundPage } from 'pages/not-found-page';
 
+// Great example of using enums as keys!!!
 export enum AppRoutes {
   MAIN = 'main',
   ABOUT = 'about',

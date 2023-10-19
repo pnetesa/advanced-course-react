@@ -5,5 +5,8 @@
   "Loading...": "Loading...",
   "Main": "Main",
   "About": "About",
-  "Page not found": "Page not found"
+  "Page not found": "Page not found",
+  "Unexpected error has occurred": "Unexpected error has occurred",
+  "Reload page": "Reload page",
+  "Throw Error": "Throw Error"
 }
