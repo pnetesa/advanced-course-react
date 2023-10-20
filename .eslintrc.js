@@ -25,6 +25,12 @@ module.exports = {
         sourceType: 'script',
       },
     },
+    {
+      files: ['**/src/**/*.{spec,test}.{ts,tsx}'],
+      rules: {
+        'i18next/no-literal-string': 'off',
+      },
+    },
   ],
   parserOptions: {
     ecmaVersion: 'latest',
@@ -49,7 +55,10 @@ module.exports = {
     '@typescript-eslint/space-before-function-paren': 'off',
     '@typescript-eslint/strict-boolean-expressions': 'off',
     '@typescript-eslint/no-floating-promises': 'off',
-    'i18next/no-literal-string': ['error', { markupOnly: true }],
+    'i18next/no-literal-string': ['error', {
+      markupOnly: true,
+      ignoreAttribute: ['data-testid'],
+    }],
     'max-len': ['error', { code: 120 }],
     'no-console': 'warn',
   },

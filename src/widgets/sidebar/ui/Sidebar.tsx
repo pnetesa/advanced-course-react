@@ -21,7 +21,6 @@ export const Sidebar: FC<SidebarProps> = ({ className }) => {
       data-testid="sidebar"
       className={classNames(cls.sidebar, [className], { [cls.collapsed]: isCollapsed })}
     >
-      {/* eslint-disable-next-line i18next/no-literal-string */}
       <Button data-testid="sidebar-toggle" type="button" onClick={onToggle}>
         { isCollapsed ? '>>' : '<<' }
       </Button>
