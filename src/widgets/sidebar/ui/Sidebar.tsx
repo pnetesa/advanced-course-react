@@ -17,8 +17,14 @@ export const Sidebar: FC<SidebarProps> = ({ className }) => {
   }
 
   return (
-    <div className={classNames(cls.sidebar, [className], { [cls.collapsed]: isCollapsed })}>
-      <Button type="button" onClick={onToggle}>{ isCollapsed ? '>>' : '<<' }</Button>
+    <div
+      data-testid="sidebar"
+      className={classNames(cls.sidebar, [className], { [cls.collapsed]: isCollapsed })}
+    >
+      {/* eslint-disable-next-line i18next/no-literal-string */}
+      <Button data-testid="sidebar-toggle" type="button" onClick={onToggle}>
+        { isCollapsed ? '>>' : '<<' }
+      </Button>
       <div className={cls.switchers}>
         <ThemeSwitcher />
         <LangSwitcher className={cls.lang} />
