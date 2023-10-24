@@ -4,7 +4,7 @@ import cls from './Button.module.scss';
 
 export enum ThemeButton {
   CLEAR = 'clear',
-  MINIMAL = 'minimal',
+  OUTLINE = 'outline',
   NO_THEME = '',
 }
 

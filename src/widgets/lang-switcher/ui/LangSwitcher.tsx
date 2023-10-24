@@ -18,10 +18,10 @@ export const LangSwitcher: FC<LangSwitcherProps> = ({ className }) => {
     <Button
       type="button"
       className={classNames('', [className])}
-      theme={ThemeButton.MINIMAL}
+      theme={ThemeButton.OUTLINE}
       onClick={toggleLanguage}
     >
-      { t('Language: ') + i18n.language.toUpperCase()}
+      { t('Language: ') + i18n?.language?.toUpperCase()}
     </Button>
   );
 };
