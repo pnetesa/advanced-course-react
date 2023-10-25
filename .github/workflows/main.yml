@@ -1,0 +1,32 @@
+name: advanced-course Actions
+run-name: ${{ github.actor }} is running GitHub Actions 🚀
+on:
+  push:
+    branches:
+      - master
+      - develop
+  pull_request:
+    types:
+      - opened
+jobs:
+  Advanced-Course-Pipeline:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ 18.x ]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Starting Node.js v${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install modules
+        run: npm ci --force
+      - name: Build 'production' project
+        run: npm run build:prod
+      - name: Linting typescript
+        run: npm run lint
+      - name: Linting CSS
+        run: npm run lint:scss
+      - name: Running Unit Tests
+        run: npm run test:unit

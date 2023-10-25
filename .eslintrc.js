@@ -8,6 +8,7 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',
     'plugin:i18next/recommended',
+    'plugin:storybook/recommended',
   ],
   overrides: [
     {
@@ -35,6 +36,7 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
+    // project: './config/build/build-dev-server.ts',
   },
   plugins: [
     'react',
@@ -57,7 +59,7 @@ module.exports = {
     '@typescript-eslint/no-floating-promises': 'off',
     'i18next/no-literal-string': ['error', {
       markupOnly: true,
-      ignoreAttribute: ['data-testid'],
+      ignoreAttribute: ['data-testid', 'to'],
     }],
     'max-len': ['error', { code: 120 }],
     'no-console': 'warn',
