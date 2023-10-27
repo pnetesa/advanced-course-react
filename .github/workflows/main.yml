@@ -26,10 +26,13 @@ jobs:
         run: npm run build:prod
       - name: Linting typescript
         run: npm run lint
+        if: always()
       - name: Linting CSS
         run: npm run lint:scss
+        if: always()
       - name: Running Unit Tests
         run: npm run test:unit
+        if: always()
       - name: Build Storybook
         run: npm run storybook:build
       - name: Run Loki screenshot testing
