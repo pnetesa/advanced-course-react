@@ -5,6 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from 'app/providers/theme-provider';
 import 'shared/config/i18n';
 import { ErrorBoundary } from 'app/providers/error-boundary';
+import 'app/styles/index.scss';
 
 render(
   <BrowserRouter>

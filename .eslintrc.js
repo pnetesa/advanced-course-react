@@ -27,9 +27,10 @@ module.exports = {
       },
     },
     {
-      files: ['**/src/**/*.{spec,test}.{ts,tsx}'],
+      files: ['**/src/**/*.{spec,test,stories}.{ts,tsx}'],
       rules: {
         'i18next/no-literal-string': 'off',
+        'max-len': 'off',
       },
     },
   ],
@@ -42,6 +43,7 @@ module.exports = {
     'react',
     '@typescript-eslint',
     'i18next',
+    'react-hooks',
   ],
   rules: {
     // 'react/jsx-indent': ['error', 4],
@@ -63,6 +65,8 @@ module.exports = {
     }],
     'max-len': ['error', { code: 120 }],
     'no-console': 'warn',
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'error',
   },
   settings: {
     react: {
