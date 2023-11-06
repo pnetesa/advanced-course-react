@@ -58,7 +58,7 @@ export const Modal: FC<ModalProps> = (props): JSX.Element => {
 
   return (
     <Portal>
-      <div className={classNames(cls.modal, ['app', className, theme], mods)}>
+      <div className={classNames(cls.modal, [className, theme], mods)}>
         <div className={cls.overlay} onClick={closeHandler}>
           <div className={cls.content} onClick={onContentClick}>
             {children}

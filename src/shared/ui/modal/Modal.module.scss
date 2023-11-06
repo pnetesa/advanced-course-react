@@ -7,6 +7,8 @@
   opacity: 0;
   pointer-events: none;
   z-index: -1;
+  font: var(--font-m);
+  color: var(--primary-color);
 }
 
 .overlay {
@@ -31,7 +33,6 @@
   z-index: var(--modal-z-index);
   pointer-events: auto;
   opacity: 1;
-  background: transparent !important; // EVIL!! :(
 
   .content {
     transform: scale(1);
