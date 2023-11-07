@@ -1,0 +1,24 @@
+### Get posts
+GET http://localhost:8000/posts
+Authorization: swordfish1234
+
+### Get posts no Auth
+GET http://localhost:8000/posts
+
+### Login user (admin@user.com/admin just@user.com/justuser)
+POST http://localhost:8000/login
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "123"
+}
+
+### Login error
+POST http://localhost:8000/login
+Content-Type: application/json
+
+{
+  "username": "non-existing-user",
+  "password": "zxcv0987"
+}
