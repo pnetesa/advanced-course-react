@@ -21,7 +21,7 @@
     "test:ui:report:html": "npm run test:ui:gen:json && npm run test:ui:gen:html",
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
     "storybook:build": "storybook build -c ./config/storybook",
-    "prepush": "npm run lint && npm run test:unit && npm run test:ui:loki"
+    "prepush": "npm run lint && npm run lint:scss && npm run test:unit && npm run test:ui:loki"
   },
   "keywords": [],
   "author": "",

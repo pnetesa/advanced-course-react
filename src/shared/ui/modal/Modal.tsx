@@ -9,16 +9,24 @@ interface ModalProps extends HTMLAttributes<HTMLDivElement> {
   className?: string;
   isOpen?: boolean;
   onClose?: () => void;
+  lazy?: boolean;
 }
 
 const ANIMATION_DELAY = 300;
 
-export const Modal: FC<ModalProps> = (props): JSX.Element => {
-  const { className, isOpen = false, onClose, children } = props;
+export const Modal: FC<ModalProps> = (props): JSX.Element | null => {
+  const { className, isOpen = false, onClose, lazy, children } = props;
   const { theme } = useTheme();
 
   const [isClosing, setIsClosing] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
   const timerRef = useRef<ReturnType<typeof setTimeout> | number>();
+
+  useEffect(() => {
+    if (isOpen) {
+      setIsMounted(true);
+    }
+  }, [isOpen]);
 
   const closeHandler = useCallback((): void => {
     if (onClose) {
@@ -55,6 +63,10 @@ export const Modal: FC<ModalProps> = (props): JSX.Element => {
       window.removeEventListener('keydown', onKeyDown);
     };
   }, [isOpen, onKeyDown]);
+
+  if (lazy && !isMounted) {
+    return null;
+  }
 
   return (
     <Portal>

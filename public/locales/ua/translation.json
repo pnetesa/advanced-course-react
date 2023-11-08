@@ -10,5 +10,7 @@
   "Unexpected error has occurred": "Сталася неочікувана помилка",
   "Reload page": "Перезавантажити сторінку",
   "Throw Error": "Кинути помилку",
-  "Login": "Логін"
+  "Login": "Логін",
+  "Username": "Ім'я користувача",
+  "Password": "Пароль"
 }
