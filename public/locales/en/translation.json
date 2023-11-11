@@ -11,6 +11,9 @@
   "Reload page": "Reload page",
   "Throw Error": "Throw Error",
   "Login": "Login",
+  "Logout": "Logout",
   "Username": "Username",
-  "Password": "Password"
+  "Password": "Password",
+  "Authorization form": "Authorization form",
+  "Invalid login or password": "Invalid login or password"
 }

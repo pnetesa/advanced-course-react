@@ -21,11 +21,11 @@ server.use(async (req, res, next) => {
 // Login endpoint
 server.post('/login', (req, res) => {
   try {
-    const { username, pasword } = req.body;
+    const { username, password } = req.body;
     const db = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'db.json'), 'UTF-8'));
     const { users } = db;
 
-    const userFromDB = users.find((user) => (user.username === username) && (user.pasword === pasword));
+    const userFromDB = users.find((user) => (user.username === username) && (user.password === password));
     if (!userFromDB) {
       return res.status(403).json({ message: 'USER NOT FOUND' });
     }
@@ -48,7 +48,7 @@ server.use((req, res, next) => {
 
 server.use(router);
 
-// Run server
+// Run server http://localhost:8000
 server.listen(8000, () => {
   console.log('Server is running on port 8000');
 });

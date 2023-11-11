@@ -31,11 +31,13 @@ export const Button: FC<ButtonProps> = (props) => {
     square,
     size = ButtonSize.M,
     children,
+    disabled,
     ...otherProps
   } = props;
 
   const mods: Record<string, boolean> = {
     [cls.square]: Boolean(square),
+    [cls.disabled]: Boolean(disabled),
   };
 
   return (

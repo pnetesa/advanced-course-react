@@ -2,7 +2,7 @@ import { type FC } from 'react';
 import { Button } from 'shared/ui/button/Button';
 import { useDispatch, useSelector } from 'react-redux';
 import { counterActions } from '../model/counter-slice';
-import { getCounterValue } from 'entities/counter/selectors';
+import { getCounterValue } from '../model/selectors';
 export const Counter: FC = (): JSX.Element => {
   const dispatch = useDispatch();
   const counterValue = useSelector(getCounterValue);

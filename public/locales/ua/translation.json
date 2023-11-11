@@ -11,6 +11,9 @@
   "Reload page": "Перезавантажити сторінку",
   "Throw Error": "Кинути помилку",
   "Login": "Логін",
+  "Logout": "Вийти",
   "Username": "Ім'я користувача",
-  "Password": "Пароль"
+  "Password": "Пароль",
+  "Authorization form": "Форма авторизації",
+  "Invalid login or password": "Невірний логін або пароль"
 }

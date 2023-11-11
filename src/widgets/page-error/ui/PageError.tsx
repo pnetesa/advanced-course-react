@@ -4,7 +4,7 @@ import cls from './PageError.module.scss';
 import { useTranslation } from 'react-i18next';
 import { Button } from 'shared/ui/button/Button';
 import { Theme } from 'app/providers/theme-provider';
-import { LS_THEME_KEY } from 'app/providers/theme-provider/ThemeContext';
+import { LS_THEME_KEY } from 'shared/const';
 
 interface PageErrorProps {
   className?: string;

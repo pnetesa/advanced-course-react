@@ -14,5 +14,3 @@ export const ThemeContext = createContext<ThemeContextProps>({
   theme: Theme.LIGHT,
   setTheme: () => {},
 });
-
-export const LS_THEME_KEY = 'LS_THEME_KEY';
